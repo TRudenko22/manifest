@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: <CLUSTERROLE_NAME>
+rules:
+- apiGroups: [<API_GROUP_NAME>]
+  resources: [<RESOURCE_NAME>]
+  verbs: [<VERB_1>, <VERB_2>, ...]
+- apiGroups: [<API_GROUP_NAME>]
+  resources: [<RESOURCE_NAME>]
+  resourceNames: [<RESOURCE_NAME_1>, <RESOURCE_NAME_2>, ...]
+  verbs: [<VERB_1>, <VERB_2>, ...]

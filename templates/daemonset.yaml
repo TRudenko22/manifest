@@ -1,9 +1,8 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: <DEPLOYMENT_NAME>
+  name: <DAEMONSET_NAME>
 spec:
-  replicas: <REPLICA_COUNT>
   selector:
     matchLabels:
       app: <APP_LABEL>

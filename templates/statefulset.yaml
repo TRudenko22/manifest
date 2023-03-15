@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: <STATEFULSET_NAME>
+spec:
+  replicas: <REPLICA_COUNT>
+  serviceName: <SERVICE_NAME>
+  selector:
+    matchLabels:
+      app: <APP_LABEL>
+  template:
+    metadata:
+      labels:
+        app: <APP_LABEL>
+    spec:
+      containers:
+      - name: <CONTAINER_NAME>
+        image: <DOCKER_IMAGE>
+        ports:
+        - containerPort: <CONTAINER_PORT>
+        volumeMounts:
+        - name: <VOLUME_NAME>
+          mountPath: <MOUNT_PATH>
+  volumeClaimTemplates:
+  - metadata:
+      name: <VOLUME_NAME>
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: <STORAGE_SIZE>
