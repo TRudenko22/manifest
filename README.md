@@ -1,0 +1,2 @@
+# manifest
+Kubernetes manifest generator
