@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-name
+  labels:
+    app: app-name
+spec:
+  replicas: 3
+  template:
