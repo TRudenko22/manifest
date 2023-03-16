@@ -1,0 +1,28 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: <JOB_NAME>
+spec:
+  template:
+    metadata:
+      name: <JOB_NAME>
+    spec:
+      containers:
+      - name: <CONTAINER_NAME>
+        image: <CONTAINER_IMAGE>
+        command: [<COMMAND>]
+        args: [<ARG1>, <ARG2>, ...]
+        env:
+        - name: <ENV_VAR1>
+          value: <ENV_VALUE1>
+        - name: <ENV_VAR2>
+          value: <ENV_VALUE2>
+        resources:
+          limits:
+            cpu: <CPU_LIMIT>
+            memory: <MEMORY_LIMIT>
+          requests:
+            cpu: <CPU_REQUEST>
+            memory: <MEMORY_REQUEST>
+      restartPolicy: <RESTART_POLICY>
+      backoffLimit: <BACKOFF_LIMIT>
