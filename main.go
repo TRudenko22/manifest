@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
-    "strings"
+	"strings"
 
 	"github.com/urfave/cli/v2"
 )
@@ -32,15 +32,15 @@ func generate(ctx *cli.Context) error {
 }
 
 func list(ctx *cli.Context) error {
-    dir, _ := templates.ReadDir("templates")
-    
-    fmt.Println("The following templates are in this binary:")
-    fmt.Println("-------------------------------------------")
-    for _, file := range dir {
-        resource := strings.Split(file.Name(), ".")[0]
-        fmt.Println(resource)
-    }
-    fmt.Println("-------------------------------------------")
+	dir, _ := templates.ReadDir("templates")
+
+	fmt.Println("The following templates are in this binary:")
+	fmt.Println("-------------------------------------------")
+	for _, file := range dir {
+		resource := strings.Split(file.Name(), ".")[0]
+		fmt.Println(resource)
+	}
+	fmt.Println("-------------------------------------------")
 
 	return nil
 }
@@ -56,7 +56,7 @@ func main() {
 			},
 			{
 				Name:    "list",
-				Aliases: []string{"l"},
+				Aliases: []string{"l", "ls"},
 				Usage:   "Lists available templates",
 				Action:  list,
 			},
